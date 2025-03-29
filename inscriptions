@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activer les notifications</title>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+            OneSignal.init({
+                appId: "daff1f7a-21e9-432d-b093-15d4d5477205",
+                notifyButton: {
+                    enable: true
+                }
+            });
+        });
+
+        function subscribe() {
+            OneSignal.push(["registerForPushNotifications"]);
+            alert("Si vous ne voyez pas de demande, vérifiez les paramètres de votre navigateur.");
+        }
+    </script>
+</head>
+<body>
+    <h2>Recevoir les notifications</h2>
+    <p>Cliquez sur le bouton ci-dessous pour accepter les notifications :</p>
+    <button onclick="subscribe()">Activer les notifications</button>
+</body>
+</html>
